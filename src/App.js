@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Comments from "./Components/Comments/Comments";
+import Footer from "./Components/pages/Footer";
+import Header from "./Components/pages/Header";
+import { CommentsProvider } from "./Context/CommentsContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CommentsProvider>
+      <div className="relative w-10/12 mx-auto my-6 md:w-6/12">
+        <Header />
+        <Comments />
+        <Footer />
+      </div>
+    </CommentsProvider>
   );
 }
 
